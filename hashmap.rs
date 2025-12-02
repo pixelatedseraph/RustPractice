@@ -51,3 +51,16 @@ pub fn is_anagram (word1 : &str, word2 : &str) -> bool {
     }
     false
 }
+
+pub fn first_non_repeating_w (word : &str) -> Option<char> {
+    let mut map: HashMap<char, i32> = HashMap::new();
+    for ch in word.chars(){
+        *map.entry(ch).or_insert(0) +=1;
+    }
+    for ch in word.chars(){
+        if map[&ch] == 1{
+            return Some(ch);
+        }
+    }
+    None
+}

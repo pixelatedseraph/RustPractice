@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use crate::hashmap::is_anagram;
+use crate::hashmap::{first_non_repeating_w, is_anagram};
 
 mod strings;
 mod hashmap;
@@ -23,7 +23,10 @@ fn main() {
    hashmap::frequency_w(string2);
    let most_rep = hashmap::frequency_w_highest(string).unwrap_or(' ');
    println!("{}",most_rep); */
-   println!("{:?}",is_anagram("hello", "olleh"));
-   println!("{:?}",is_anagram("hii", "olleh"));
+    println!("{:?}",is_anagram("hello", "olleh"));
+    println!("{:?}",is_anagram("hii", "olleh"));
+    let string1 = "xxcczip";
+    let res = first_non_repeating_w(string1).unwrap_or(' ');
 
+    println!("{:?}",res);
 }
